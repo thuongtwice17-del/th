@@ -420,19 +420,17 @@ export default function AdminDashboard() {
                     onChange={(e) => updateField("map_link", e.target.value)}
                     className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/50"
                     placeholder="https://maps.google.com/..."
-                  />{weddingData.googleMap ? (
-                    <iframe
-                      src={`https://www.google.com/maps?q=${encodeURIComponent(weddingData.googleMap)}&output=embed`}
-                      width="100%"
-                      height="350"
-                      style={{
-                        border: 0,
-                        borderRadius: "16px",
-                        marginTop: "12px",
-                      }}
-                      loading="lazy"
-                    />
-                  ) : null}
+                  />{weddingData.googleMap && (
+  <div className="mt-3 overflow-hidden rounded-2xl">
+    <iframe
+      src={weddingData.googleMap}
+      width="100%"
+      height="350"
+      style={{ border: 0 }}
+      loading="lazy"
+    />
+  </div>
+)}
                 </div>
               </div>
 
