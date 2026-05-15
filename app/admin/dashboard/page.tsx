@@ -206,8 +206,8 @@ export default function AdminDashboard() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${activeTab === tab.id
-                  ? "bg-[#8B1A1A] text-white"
-                  : "bg-white text-gray-600 hover:bg-gray-100"
+                ? "bg-[#8B1A1A] text-white"
+                : "bg-white text-gray-600 hover:bg-gray-100"
                 }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -420,17 +420,18 @@ export default function AdminDashboard() {
                     onChange={(e) => updateField("map_link", e.target.value)}
                     className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B1A1A]/50"
                     placeholder="https://maps.google.com/..."
-                  />{weddingData.googleMap && (
-  <div className="mt-3 overflow-hidden rounded-2xl">
-    <iframe
-      src={weddingData.googleMap}
-      width="100%"
-      height="350"
-      style={{ border: 0 }}
-      loading="lazy"
-    />
-  </div>
-)}
+                  />
+                  {weddingData.googleMap && (
+                    <div className="mt-3 overflow-hidden rounded-2xl">
+                      <iframe
+                        src={weddingData.googleMap}
+                        width="100%"
+                        height="350"
+                        style={{ border: 0 }}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
 
