@@ -205,11 +205,10 @@ export default function AdminDashboard() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${
-                activeTab === tab.id
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${activeTab === tab.id
                   ? "bg-[#8B1A1A] text-white"
                   : "bg-white text-gray-600 hover:bg-gray-100"
-              }`}
+                }`}
             >
               <tab.icon className="w-4 h-4" />
               {tab.label}
